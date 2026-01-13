@@ -14,7 +14,8 @@ jobs:
     environment: k8s-dev # 환경 변수 및 시크릿 저장공간
     env:
       DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/istory
-      DOCKER_TAG: ${{ github.run_number }}
+      # DOCKER_TAG: ${{ github.run_number }}
+      DOCKER_TAG: ${{ github.sha }}
     services:
       mysql:
         image: mysql:8.0
@@ -168,5 +169,5 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git commit -am "Update image tag to ${{ env.DOCKER_TAG }}"
+          git commit -am "Update image tag to ${{ github.sha }}"
           git push origin ${{ github.ref_name }}
