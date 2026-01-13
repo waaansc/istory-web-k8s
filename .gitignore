@@ -30,8 +30,13 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+<<<<<<< HEAD
 **/.env.secret 
 
+=======
+**/.env.secret
+.github/secret.sh
+>>>>>>> 9ba39c9 (second)
 
 ### NetBeans ###
 /nbproject/private/
