@@ -162,7 +162,7 @@ jobs:
         run: |
           yq -i '
             (.spec.template.spec.containers[] | select(.name=="istory")).image
-            = "dangtong76/istory:${{ github.sha }}"
+            = "waaansc/istory:${{ github.sha }}"
           ' overlay/aws-dev/patch-deploy.yml
 
       - name: 서비스 리포지토리 최종 업데이트
